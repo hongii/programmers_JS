@@ -16,7 +16,7 @@ function solution(today, terms, privacies) {
       let expiration = map.get(type);
       let priDays = +y*12*28 + +m*28 + +d;
       
-      if (curDays >= priDays+expiration) res.push(i+1);
+      if (curDays-priDays+1 > expiration) res.push(i+1);
   })
   return res
 }
