@@ -1,11 +1,11 @@
 // 두번째 코드 -> 통과
 function solution(k, m, score) {
-  score.sort((a, b) => b-a)
-  let price = 0
-  for (let i=m-1; i<score.length; i+=m){
-      price += score[i] * m
+  score.sort((a, b) => b - a);
+  let price = 0;
+  for (let i = m - 1; i < score.length; i += m) {
+    price += score[i] * m;
   }
-  return price
+  return price;
 }
 
 /* 두번째 코드 풀이 -> 배열의 인덱스로 최솟값을 뽑아서 계산
@@ -26,8 +26,6 @@ for (let i=m-1; i<score.length; i+=m){
 
 따라서, price = score[2] * 3 + score[5] * 3 + score[8] * 3 이 된다. 
 */
-
-
 
 /* 첫번째 코드 -> 예제는 통과, 제출시 시간초과 발생. 
 function solution(k, m, score) {

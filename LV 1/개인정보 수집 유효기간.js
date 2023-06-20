@@ -1,26 +1,25 @@
 // 두번째 코드 -> 날짜 나눌때 slice()대신 split()사용, 날짜 계산의 코드 간결화
 function solution(today, terms, privacies) {
-  let [today_y, today_m ,today_d] = today.split(".");
-  let curDays = +today_y*12*28 + +today_m*28 + +today_d;
+  let [today_y, today_m, today_d] = today.split(".");
+  let curDays = +today_y * 12 * 28 + +today_m * 28 + +today_d;
   let map = new Map();
-  terms.forEach((type)=>{
-      let tmp = type.split(" ");
-      map.set(tmp[0], +tmp[1]*28);
-  })
-  
-  let res = []
-  privacies.forEach((pri, i)=>{
-      let tmp = pri.split(" ");
-      let type = tmp[1];
-      let [y, m, d] = tmp[0].split(".");
-      let expiration = map.get(type);
-      let priDays = +y*12*28 + +m*28 + +d;
-      
-      if (curDays-priDays+1 > expiration) res.push(i+1);
-  })
-  return res
-}
+  terms.forEach((type) => {
+    let tmp = type.split(" ");
+    map.set(tmp[0], +tmp[1] * 28);
+  });
 
+  let res = [];
+  privacies.forEach((pri, i) => {
+    let tmp = pri.split(" ");
+    let type = tmp[1];
+    let [y, m, d] = tmp[0].split(".");
+    let expiration = map.get(type);
+    let priDays = +y * 12 * 28 + +m * 28 + +d;
+
+    if (curDays - priDays + 1 > expiration) res.push(i + 1);
+  });
+  return res;
+}
 
 /** 첫번째 코드 -> correct
  * function solution(today, terms, privacies) {

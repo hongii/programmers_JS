@@ -1,11 +1,11 @@
 function solution(s) {
   const res = [];
-  for (let i=0; i<s.length; i++) {
-      let idx = s.slice(0, i).lastIndexOf(s[i]);
-      if (idx == -1) res.push(-1);
-      else res.push(i-idx);
+  for (let i = 0; i < s.length; i++) {
+    let idx = s.slice(0, i).lastIndexOf(s[i]);
+    if (idx == -1) res.push(-1);
+    else res.push(i - idx);
   }
-  return res
+  return res;
 }
 
 /**
