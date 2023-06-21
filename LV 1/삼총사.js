@@ -1,7 +1,7 @@
 // 첫번째 코드에서 문제에 필요한 조건만 해결하는 형태로 코드를 간결화시킴
 function solution(number) {
   let cnt = 0;
-  function combinations(cb, i, x) {
+  const combinations = (cb, i, x) => {
     if (x == 3) {
       let sum = cb.reduce((a, b) => a + b);
       if (sum === 0) cnt += 1;
@@ -12,7 +12,7 @@ function solution(number) {
         cb.pop();
       }
     }
-  }
+  };
 
   combinations([], 0, 0);
   return cnt;
