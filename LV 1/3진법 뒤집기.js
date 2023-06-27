@@ -10,6 +10,13 @@ function solution(n) {
 }
 
 /**
+ * 다른 사람 풀이
+function solution(n) {
+  return parseInt([...n.toString(3)].reverse().join(""), 3);
+}
+ */
+
+/**
  * toString() & parseInt() 의 조합 -> 진법 변형 가능
  * 1) 10진수 -> n진수 문자열로 변형 : num.toString(n)
  *   ex) let num = 8;
