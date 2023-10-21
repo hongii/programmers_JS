@@ -4,7 +4,6 @@ function solution(numbers) {
   let check;
   const isPrime = (num) => {
     if (num === 0 || num === 1) return false;
-    if (num === 2) return true;
     for (let i = 2; i <= Math.sqrt(num); i++) {
       if (num % i === 0) return false;
     }
@@ -12,22 +11,17 @@ function solution(numbers) {
   };
 
   const permutation = (numbers, numStr, len) => {
-    if (numStr.length === len) {
-      if (isPrime(+numStr)) res.add(+numStr);
-    } else {
-      for (let i = 0; i < numbers.length; i++) {
-        if (!check[i]) {
-          check[i] = true;
-          permutation(numbers, numStr + String(numbers[i]), len);
-          check[i] = false;
-        }
+    if (isPrime(+numStr)) res.add(+numStr);
+    for (let i = 0; i < numbers.length; i++) {
+      if (!check[i]) {
+        check[i] = true;
+        permutation(numbers, numStr + String(numbers[i]), len);
+        check[i] = false;
       }
     }
   };
 
-  for (let i = 1; i <= numbers.length; i++) {
-    check = new Array(i).fill(false);
-    permutation(numbers, "", i);
-  }
+  check = new Array(numbers.length).fill(false);
+  permutation(numbers, "", 0);
   return res.size;
 }
