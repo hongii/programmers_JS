@@ -26,7 +26,7 @@ function solution(numbers) {
   };
 
   for (let i = 1; i <= numbers.length; i++) {
-    check = new Array(numbers.length).fill(false);
+    check = new Array(i).fill(false);
     permutation(numbers, "", i);
   }
   return res.size;
