@@ -62,8 +62,8 @@ function solution(video_len, pos, op_start, op_end, commands) {
   });
 
   return (
-    String(Math.floor(pos_total_sec / 60)).padStart(2, 0) +
+    String(Math.floor(pos_total_sec / 60)).padStart(2, "0") +
     ":" +
-    String(pos_total_sec % 60).padStart(2, 0)
+    String(pos_total_sec % 60).padStart(2, "0")
   );
 }
